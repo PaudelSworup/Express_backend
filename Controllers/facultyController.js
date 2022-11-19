@@ -10,9 +10,9 @@ exports.postFaculty = async (req, res) => {
         faculty = await faculty.save();
 
         if (!faculty) {
-          res.status(400).json({ error: "Something went wrong" });
+          return res.status(400).json({ error: "Something went wrong" });
         }
-        res.json(faculty);
+        res.send(faculty);
       } else {
         res.status(400).json({ error: "Faculty name already exist" });
       }

@@ -9,9 +9,9 @@ exports.semester = async (req, res) => {
         semester = await semester.save();
 
         if (!semester) {
-          res.status(400).json({ error: "Something went wrong" });
+          return res.status(400).json({ error: "Something went wrong" });
         }
-        res.status(200).json(semester);
+        res.status(200).send(semester);
       } else return res.status(400).json({ error: "semester already exist" });
     }
   );
@@ -23,5 +23,5 @@ exports.getSemester = async (req, res) => {
   if (!semester) {
     res.status(400).json({ error: "Something went wrong" });
   }
-  res.status(200).json(semester);
+  res.status(200).send(semester);
 };

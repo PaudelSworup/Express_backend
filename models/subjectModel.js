@@ -8,13 +8,11 @@ const subjectSchema = mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: true,
     },
 
     book_name: {
       type: String,
       required: true,
-      unique: true,
     },
 
     faculty: {
