@@ -4,7 +4,7 @@ exports.semester = async (req, res) => {
   let semester = new Semester(req.body);
   Semester.findOne(
     { semester_num: semester.semester_num },
-    async (err, data) => {
+    async (error, data) => {
       if (data === null) {
         semester = await semester.save();
 
